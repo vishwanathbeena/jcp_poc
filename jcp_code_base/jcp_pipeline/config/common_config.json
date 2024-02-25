@@ -1,0 +1,44 @@
+{
+  "load":{
+    "source":{
+      "source_path_sales":"s3://vishwa-poc-jcp/data/input/sales",
+      "source_path_stores":"s3://vishwa-poc-jcp/data/input/stores",
+      "source_path_items":"s3://vishwa-poc-jcp/data /input/items",
+      "source_path_categories":"s3://vishwa-poc-jcp/data/input/categories"
+    },
+    "dest":{
+      "destination_path_sales":"s3://vishwa-poc-jcp/data/load_op_pqt/sales",
+      "destination_path_stores":"s3://vishwa-poc-jcp/data/load_op_pqt/stores",
+      "destination_path_items":"s3://vishwa-poc-jcp/data/load_op_pqt/items",
+      "destination_path_categories":"s3://vishwa-poc-jcp/data/load_op_pqt/categories"
+    }
+  },
+  "deduplicate":{
+    "source":{
+      "source_path_sales":"s3://vishwa-poc-jcp/data/load_op_pqt/sales",
+      "source_path_stores":"s3://vishwa-poc-jcp/data/load_op_pqt/stores",
+      "source_path_items":"s3://vishwa-poc-jcp/data/load_op_pqt/items",
+      "source_path_categories":"s3://vishwa-poc-jcp/data/load_op_pqt/categories"
+    },
+    "dest":{
+      "destination_path_sales":"s3://vishwa-poc-jcp/data/load_op_pqt_dedup/sales",
+      "destination_path_stores":"s3://vishwa-poc-jcp/data/load_op_pqt_dedup/stores",
+      "destination_path_items":"s3://vishwa-poc-jcp/data/load_op_pqt_dedup/items",
+      "destination_path_categories":"s3://vishwa-poc-jcp/data/load_op_pqt_dedup/categories"
+    }
+  },
+  "aggregate":{
+    "source":{
+      "source_path_sales":"s3://vishwa-poc-jcp/data/load_op_pqt_dedup/sales",
+      "source_path_stores":"s3://vishwa-poc-jcp/data/load_op_pqt_dedup/stores",
+      "source_path_items":"s3://vishwa-poc-jcp/data/load_op_pqt_dedup/items",
+      "source_path_categories":"s3://vishwa-poc-jcp/data/load_op_pqt_dedup/categories"
+    },
+    "dest":{
+      "destintion_path": "s3://vishwa-poc-jcp/data/aggregate/"
+    }
+  },
+  "push":{
+    "source_path":"s3://vishwa-poc-jcp/data/aggregate/"
+  }
+}

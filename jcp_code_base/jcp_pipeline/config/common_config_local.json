@@ -1,0 +1,45 @@
+{
+  "load":{
+    "source":{
+      "source_path_sales":"jcp_poc_test_files/input/sales",
+      "source_path_stores":"jcp_poc_test_files/input/stores",
+      "source_path_items":"jcp_poc_test_files/input/items",
+      "source_path_categories":"jcp_poc_test_files/input/categories"
+    },
+    "dest":{
+      "destination_path_sales":"jcp_poc_test_files/load_op_pqt/sales",
+      "destination_path_stores":"jcp_poc_test_files/load_op_pqt/stores",
+      "destination_path_items":"jcp_poc_test_files/load_op_pqt/items",
+      "destination_path_categories":"jcp_poc_test_files/load_op_pqt/categories"
+    }
+  },
+  "deduplicate":{
+    "source":{
+      "source_path_sales":"jcp_poc_test_files/load_op_pqt/sales",
+      "source_path_stores":"jcp_poc_test_files/load_op_pqt/stores",
+      "source_path_items":"jcp_poc_test_files/load_op_pqt/items",
+      "source_path_categories":"jcp_poc_test_files/load_op_pqt/categories"
+    },
+    "dest":{
+      "destination_path_sales":"jcp_poc_test_files/load_op_pqt_dedup/sales",
+      "destination_path_stores":"jcp_poc_test_files/load_op_pqt_dedup/stores",
+      "destination_path_items":"jcp_poc_test_files/load_op_pqt_dedup/items",
+      "destination_path_categories":"jcp_poc_test_files/load_op_pqt_dedup/categories"
+    }
+  },
+  "aggregate":{
+    "source":{
+      "source_path_sales":"jcp_poc_test_files/load_op_pqt_dedup/sales",
+      "source_path_stores":"jcp_poc_test_files/load_op_pqt_dedup/stores",
+      "source_path_items":"jcp_poc_test_files/load_op_pqt_dedup/items",
+      "source_path_categories":"jcp_poc_test_files/load_op_pqt_dedup/categories"
+    },
+    "dest":{
+      "destintion_path": "jcp_poc_test_files/aggregate/"
+    }
+  },
+  "push":{
+    "source_path":"jcp_poc_test_files/aggregate/"
+  }
+}
+
